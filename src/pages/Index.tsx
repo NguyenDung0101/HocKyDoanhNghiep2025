@@ -268,7 +268,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4">Giới thiệu chương trình</Badge>
+              <Badge className="mb-4 text-base px-4 py-2">
+                Giới thiệu chương trình
+              </Badge>
               <h2 className="text-4xl font-bold mb-6 text-foreground">
                 Cầu nối hiệu quả giữa sinh viên và doanh nghiệp
               </h2>
@@ -305,7 +307,9 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4">Mục tiêu chương trình</Badge>
+            <Badge className="mb-4 text-base px-4 py-2">
+              Mục tiêu chương trình
+            </Badge>
             <h2 className="text-4xl font-bold mb-6">5 Mục tiêu chính</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Chương trình được thiết kế để đạt được những mục tiêu quan trọng
@@ -343,7 +347,9 @@ const Index = () => {
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4">Đối tượng tham gia</Badge>
+            <Badge className="mb-4 text-base px-4 py-2">
+              Đối tượng tham gia
+            </Badge>
             <h2 className="text-4xl font-bold mb-6">
               Ai phù hợp với chương trình?
             </h2>
@@ -373,7 +379,9 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4">Hình thức tổ chức</Badge>
+            <Badge className="mb-4 text-base px-4 py-2">
+              Hình thức tổ chức
+            </Badge>
             <h2 className="text-4xl font-bold mb-6">
               Phương pháp đào tạo hiện đại
             </h2>
@@ -423,7 +431,9 @@ const Index = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4">Dự án đã thực hiện</Badge>
+            <Badge className="mb-4 text-base px-4 py-2">
+              Dự án đã thực hiện
+            </Badge>
             <h2 className="text-4xl font-bold mb-6">
               Thành công qua từng dự án
             </h2>
@@ -467,7 +477,9 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4">Thời lượng chương trình</Badge>
+            <Badge className="mb-4 text-base px-4 py-2">
+              Thời lượng chương trình
+            </Badge>
             <h2 className="text-4xl font-bold mb-6">Lộ trình 8 tuần</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Chương trình được chia thành 4 giai đoạn rõ ràng, từ định hướng
@@ -488,7 +500,10 @@ const Index = () => {
                         {index + 1}
                       </div>
                       <div>
-                        <Badge variant="outline" className="mb-1">
+                        <Badge
+                          variant="outline"
+                          className="mb-1 text-lg px-6 py-3"
+                        >
                           {phase.weeks}
                         </Badge>
                         <h3 className="text-xl font-bold">{phase.title}</h3>
@@ -521,7 +536,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col gap-12 items-center">
             <div>
-              <Badge className="mb-4">Quyền lợi sinh viên</Badge>
+              <Badge className="mb-4 text-base px-4 py-2">
+                Quyền lợi sinh viên
+              </Badge>
               <h2 className="text-4xl font-bold mb-6">
                 Những giá trị bạn nhận được
               </h2>
@@ -554,7 +571,9 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4">Lộ trình thăng tiến</Badge>
+            <Badge className="mb-4 text-base px-4 py-2">
+              Lộ trình thăng tiến
+            </Badge>
             <h2 className="text-4xl font-bold mb-6">4 Cấp bậc phát triển</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Lộ trình rõ ràng giúp sinh viên phát triển từ người mới bắt đầu
@@ -633,7 +652,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4">Đơn vị tổ chức</Badge>
+            <Badge className="mb-4 text-base px-4 py-2">Đơn vị tổ chức</Badge>
             <h2 className="text-4xl font-bold mb-6">Đối tác và nhà tài trợ</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Chương trình được thực hiện với sự hợp tác của các doanh nghiệp và
