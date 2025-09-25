@@ -730,8 +730,10 @@ const Index = () => {
               Học Kỳ Doanh Nghiệp 2025
             </h3>
             <p className="text-background/70 mb-6 max-w-2xl mx-auto">
-              Cầu nối hiệu quả giữa sinh viên – nhà trường – doanh nghiệp. Trải
-              nghiệm thực tế, phát triển bền vững.
+              <p>
+                Cầu nối hiệu quả giữa sinh viên – nhà trường – doanh nghiệp.
+              </p>
+              Trải nghiệm thực tế, phát triển bền vững.
             </p>
             <div className="flex justify-center space-x-6 text-sm text-background/60">
               <span>© 2025 HKDN Program</span>
