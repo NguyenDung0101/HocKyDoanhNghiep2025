@@ -32,7 +32,7 @@ import benefitsIllustration from "@/assets/benefits-illustration.jpg";
 import project1 from "@/assets/20241108_122104897_iOS.jpg";
 import project2 from "@/assets/20241017_094041863_iOS.jpg";
 import project3 from "@/assets/banner.jpg";
-import project4 from "@/assets/_STR4500.jpg";
+import project4 from "@/assets/STR4500.jpg";
 
 const Index = () => {
   const corporatePartners = [
@@ -89,12 +89,13 @@ const Index = () => {
     },
   };
 
+  // Fix lỗi itemVariants đơn giản (dòng 92-99)
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] },
+      transition: { duration: 0.5 },
     },
   };
 
@@ -540,14 +541,16 @@ const Index = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-10">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 text-base px-4 py-2">
+            <Badge className="mb-4 text-base px-4 py-2 bg-primary text-primary-foreground">
               Thời lượng chương trình
             </Badge>
-            <h2 className="text-4xl font-bold mb-6">Lộ trình 8 tuần</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-50">
+              Lộ trình 8 tuần
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Chương trình được chia thành 4 giai đoạn rõ ràng, từ định hướng
               đến hoàn thiện
             </p>
@@ -558,36 +561,45 @@ const Index = () => {
               {phases.map((phase, index) => (
                 <Card
                   key={index}
-                  className="shadow-soft hover:shadow-medium transition-smooth relative"
+                  className="shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl border border-gray-200 dark:border-gray-700"
                 >
                   <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mr-4">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mr-4 text-lg">
                         {index + 1}
                       </div>
                       <div>
                         <Badge
                           variant="outline"
-                          className="mb-1 text-lg px-6 py-3"
+                          className="mb-2 text-sm px-4 py-1"
                         >
                           {phase.weeks}
                         </Badge>
-                        <h3 className="text-xl font-bold">{phase.title}</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-50">
+                          {phase.title}
+                        </h3>
                       </div>
                     </div>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
+
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                       {phase.description}
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {phase.activities.map((activity, actIndex) => (
-                        <Badge
-                          key={actIndex}
-                          variant="secondary"
-                          className="text-xs"
-                        >
-                          {activity}
-                        </Badge>
-                      ))}
+
+                    <div className="space-y-2">
+                      <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+                        Hoạt động
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {phase.activities.map((activity, actIndex) => (
+                          <Badge
+                            key={actIndex}
+                            variant="secondary"
+                            className="text-xs px-3 py-1"
+                          >
+                            {activity}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -598,37 +610,51 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-10 bg-secondary/30">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col gap-12 items-center">
-            <div>
-              <Badge className="mb-4 text-base px-4 py-2">
-                Quyền lợi sinh viên
-              </Badge>
-              <h2 className="text-4xl font-bold mb-6">
-                Những giá trị bạn nhận được
-              </h2>
-              <div className="grid gap-6">
-                {benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start space-x-4 p-4 bg-card rounded-lg shadow-soft"
-                  >
-                    <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                      {benefit.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-1">
+          <div className="text-center mb-16">
+            <Badge className="mb-6 text-lg px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg">
+              <Award className="h-5 w-5 mr-2" />
+              Quyền lợi sinh viên
+            </Badge>
+            <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Những giá trị bạn nhận được
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+              Khám phá những lợi ích độc quyền và giá trị bền vững mà chương
+              trình mang lại cho sự phát triển nghề nghiệp của bạn
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="group h-full p-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:shadow-2xl hover:scale-105 transition-all duration-500 rounded-3xl border border-white/20 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-500">
+                  <CardContent className="p-0">
+                    <div className="text-center mb-6">
+                      <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        <div className="text-white">{benefit.icon}</div>
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                         {benefit.title}
                       </h3>
-                      <p className="text-muted-foreground">
-                        {benefit.description}
-                      </p>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+                    <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed text-center">
+                      {benefit.description}
+                    </p>
+                    <div className="mt-6 flex justify-center">
+                      <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full group-hover:w-20 transition-all duration-300"></div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -814,25 +840,6 @@ const Index = () => {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Call to Action */}
-          <motion.div
-            className="text-center mt-20"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-primary text-primary-foreground rounded-2xl p-12 ">
-              <h3 className="text-3xl font-bold mb-6">
-                Trở thành Đối tác của Học kỳ doanh nghiệp 2025
-              </h3>
-              <p className="text-lg text-gray-300 dark:text-gray-600 mb-8 max-w-2xl mx-auto">
-                Cùng chúng tôi kiến tạo những giá trị bền vững cho cộng đồng
-                sinh viên thông qua các sự kiện chạy bộ ý nghĩa.
-              </p>
-            </div>
           </motion.div>
         </div>
       </section>
