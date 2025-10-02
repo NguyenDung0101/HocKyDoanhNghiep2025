@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { motion, Variants } from "framer-motion";
 import {
   Card,
   CardContent,
@@ -21,6 +22,7 @@ import {
   Star,
   Clock,
   Trophy,
+  Handshake,
 } from "lucide-react";
 
 // Import generated images
@@ -33,6 +35,69 @@ import project3 from "@/assets/banner.jpg";
 import project4 from "@/assets/_STR4500.jpg";
 
 const Index = () => {
+  const corporatePartners = [
+    { id: 1, name: "ASL", logo: "/carousel/ASL.webp" },
+    { id: 2, name: "Binemo", logo: "/carousel/Binemo.webp" },
+    { id: 3, name: "CP Group", logo: "/carousel/CP.webp" },
+    { id: 4, name: "Greenfeed", logo: "/carousel/Greenfeed.webp" },
+    { id: 5, name: "Happy Land", logo: "/carousel/Happyland.webp" },
+    { id: 6, name: "HTO Group", logo: "/carousel/HTOGroup.webp" },
+    { id: 7, name: "NAB", logo: "/carousel/NAB.webp" },
+    { id: 8, name: "Richs Vietnam", logo: "/carousel/Richs.webp" },
+    { id: 9, name: "Satra", logo: "/carousel/Satra.webp" },
+    { id: 10, name: "Schindler", logo: "/carousel/Schindler.webp" },
+    { id: 11, name: "SGC", logo: "/carousel/SGC.webp" },
+    { id: 12, name: "SGF", logo: "/carousel/SGF.webp" },
+    { id: 13, name: "SGGG", logo: "/carousel/SGGG.webp" },
+    { id: 14, name: "SGL", logo: "/carousel/SGL.webp" },
+    { id: 15, name: "Shinhan Bank", logo: "/carousel/Shinhan.webp" },
+    { id: 16, name: "Smar", logo: "/carousel/Smar.webp" },
+    { id: 17, name: "Smentor", logo: "/carousel/Smentor.webp" },
+    { id: 18, name: "SP", logo: "/carousel/SP.webp" },
+    { id: 19, name: "Tâm Châu", logo: "/carousel/TC.webp" },
+    { id: 20, name: "VNPT", logo: "/carousel/VNPT.webp" },
+    { id: 21, name: "WK", logo: "/carousel/WK.webp" },
+    { id: 22, name: "YESCO", logo: "/carousel/YESCO.webp" },
+  ];
+
+  // Đối tác Giáo dục & Hiệp hội
+  const educationPartners = [
+    { id: 1, name: "BNI Vietnam", logo: "/carousel/BNI.webp" },
+    { id: 2, name: "CSMO Vietnam", logo: "/carousel/CSMO.webp" },
+    { id: 3, name: "HUIT", logo: "/carousel/HUIT.webp" },
+    { id: 4, name: "Kỷ lục Quốc gia", logo: "/carousel/KNQG.webp" },
+    { id: 5, name: "UEH", logo: "/carousel/UEH.webp" },
+    { id: 6, name: "UFM", logo: "/carousel/UFM.webp" },
+    { id: 7, name: "VCCI", logo: "/carousel/VCCI.webp" },
+    { id: 8, name: "VK", logo: "/carousel/VK.webp" },
+    { id: 9, name: "VRA", logo: "/carousel/VRA.webp" },
+    { id: 10, name: "VSM", logo: "/carousel/VSM.webp" },
+    { id: 11, name: "VTF", logo: "/carousel/VTF.webp" },
+  ];
+
+  const stats = [
+    { label: "Đối tác tin cậy", value: "30+", icon: Handshake },
+    { label: "Sự kiện tổ chức", value: "50+", icon: Award },
+    { label: "Sinh viên tham gia", value: "5,000+", icon: Users },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] },
+    },
+  };
+
   // Program objectives data
   const objectives = [
     "Giúp sinh viên tiếp cận môi trường làm việc thực tế",
@@ -377,7 +442,7 @@ const Index = () => {
       </section>
 
       {/* Format Section */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 text-base px-4 py-2">
@@ -429,7 +494,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 text-base px-4 py-2">
@@ -475,7 +540,7 @@ const Index = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 text-base px-4 py-2">
@@ -533,7 +598,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-10 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="flex flex-col gap-12 items-center">
             <div>
@@ -569,7 +634,7 @@ const Index = () => {
       </section>
 
       {/* Career Progression Section */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 text-base px-4 py-2">
@@ -650,32 +715,125 @@ const Index = () => {
       </section>
 
       {/* Partners Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 text-base px-4 py-2">Đơn vị tổ chức</Badge>
-            <h2 className="text-4xl font-bold mb-6">Đối tác và nhà tài trợ</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Chương trình được thực hiện với sự hợp tác của các doanh nghiệp và
-              tổ chức hàng đầu
-            </p>
-          </div>
+      <section className="py-10 bg-white dark:bg-gray-900">
+        <div className="container px-4">
+          {/* Stats Section */}
+          <motion.div
+            className="text-center mb-4"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Badge className=" text-base px-4 py-2 bg-primary text-primary-foreground">
+              Đối tác tin cậy
+            </Badge>
+          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-6xl mx-auto">
-            {partners.map((partner, index) => (
-              <Card
-                key={index}
-                className="shadow-soft hover:shadow-medium transition-smooth group"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/10 transition-smooth">
-                    <Building2 className="h-8 w-8 text-muted-foreground group-hover:text-primary transition-smooth" />
+          {/* Đối tác Doanh nghiệp & Tập đoàn */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center space-x-3 bg-primary text-primary-foreground px-6 py-3 rounded-lg mb-6">
+              <Handshake className="h-6 w-6" />
+              <h3 className="text-2xl font-bold">
+                Đối tác Doanh nghiệp & Tập đoàn
+              </h3>
+            </div>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Những doanh nghiệp hàng đầu đã tin tưởng và đồng hành cùng VSM
+              trong các sự kiện chạy bộ sinh viên.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 mb-20"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {corporatePartners.map((partner) => (
+              <motion.div key={partner.id} variants={itemVariants}>
+                <Card className="group p-6 flex items-center justify-center h-32 bg-white dark:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 rounded-xl border border-gray-200 dark:border-gray-700">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-16 w-auto object-contain dark:invert group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                    />
                   </div>
-                  <p className="text-sm font-medium">{partner}</p>
-                </CardContent>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
+
+          {/* Đối tác Giáo dục & Hiệp hội */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center space-x-3 bg-primary text-primary-foreground px-6 py-3 rounded-lg mb-6">
+              <Building2 className="h-6 w-6" />
+              <h3 className="text-2xl font-bold">
+                Đối tác Giáo dục & Hiệp hội
+              </h3>
+            </div>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Hợp tác chặt chẽ với các trường đại học, viện nghiên cứu và hiệp
+              hội để phát triển cộng đồng chạy bộ sinh viên.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {educationPartners.map((partner) => (
+              <motion.div key={partner.id} variants={itemVariants}>
+                <Card className="group p-6 flex items-center justify-center h-32 bg-white dark:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 rounded-xl border border-gray-200 dark:border-gray-700">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-16 w-auto object-contain dark:invert group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Call to Action */}
+          <motion.div
+            className="text-center mt-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-primary text-primary-foreground rounded-2xl p-12 ">
+              <h3 className="text-3xl font-bold mb-6">
+                Trở thành Đối tác của Học kỳ doanh nghiệp 2025
+              </h3>
+              <p className="text-lg text-gray-300 dark:text-gray-600 mb-8 max-w-2xl mx-auto">
+                Cùng chúng tôi kiến tạo những giá trị bền vững cho cộng đồng
+                sinh viên thông qua các sự kiện chạy bộ ý nghĩa.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
