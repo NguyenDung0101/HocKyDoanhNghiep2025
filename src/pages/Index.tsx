@@ -25,11 +25,12 @@ import {
 
 // Import generated images
 import heroStudents from "@/assets/hero-students.jpg";
-import programIntro from "@/assets/program-intro.jpg";
+import programIntro from "@/assets/5.jpg";
 import benefitsIllustration from "@/assets/benefits-illustration.jpg";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import project1 from "@/assets/20241108_122104897_iOS.jpg";
+import project2 from "@/assets/20241017_094041863_iOS.jpg";
+import project3 from "@/assets/banner.jpg";
+import project4 from "@/assets/_STR4500.jpg";
 
 const Index = () => {
   // Program objectives data
@@ -79,7 +80,7 @@ const Index = () => {
       title: "Đào tạo đội ngũ Sales & Marketing tại Einstein School HCM - ESH",
       description:
         "Nâng cao năng lực bán hàng và marketing cho đội ngũ giáo dục",
-      image: project1,
+      image: project4,
       category: "Training & Development",
     },
   ];
